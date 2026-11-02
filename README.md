@@ -1,6 +1,6 @@
 # Workshop: Code Review, Refactoring, and Test-Generation Skills
 
-**Duration:** 120 minutes for Modules 1-6; Module 7 is an additional exercise | **Format:** build-it-yourself labs | **Runtime:** Python 3.10+
+**Duration:** 60 minutes for Modules 1-6, plus 5 minutes for setup; Module 7 is an additional exercise | **Format:** build-it-yourself labs | **Runtime:** Python 3.10+
 
 Create three custom agents and four reusable skills from scratch. First create a
 checklist skill, then a reviewer that explicitly uses it. Create dedicated
@@ -84,11 +84,11 @@ agent to install all of the finished examples.
 
 | Module | Time | What you create |
 |---|---|---|
-| [1. Create a code-review checklist skill](modules/01-create-code-review-skill.md) | 20 min | A quality checklist and report template, used with the default agent |
-| [2. Create a code-review agent](modules/02-create-code-review-agent.md) | 15 min | A reviewer that explicitly uses the existing checklist skill |
-| [3. Create refactoring skills](modules/03-create-refactoring-skills.md) | 25 min | Refactoring skills and templates, created but not run |
-| [4. Create a test-generation skill](modules/04-create-test-generation-skill.md) | 25 min | A test-generation skill, created but not run |
-| [5. Create a dev-workflow agent](modules/05-create-dev-workflow-agent.md) | 20 min | A single agent combining the skills with two human approval gates |
+| [1. Create a code-review checklist skill](modules/01-create-code-review-skill.md) | 8 min | A quality checklist and report template, used with the default agent |
+| [2. Create a code-review agent](modules/02-create-code-review-agent.md) | 8 min | A reviewer that explicitly uses the existing checklist skill |
+| [3. Create refactoring skills](modules/03-create-refactoring-skills.md) | 12 min | Refactoring skills and templates, created but not run |
+| [4. Create a test-generation skill](modules/04-create-test-generation-skill.md) | 12 min | A test-generation skill, created but not run |
+| [5. Create a dev-workflow agent](modules/05-create-dev-workflow-agent.md) | 10 min | A single agent combining the skills with two human approval gates |
 | [6. Use the GitHub MCP server](modules/06-mcp-server.md) | 10 min | Built-in MCP tools, with optional repository-dependent issue and PR exercises |
 | [7. Create an issue-resolver agent](modules/07-create-issue-resolver-agent.md) | Additional exercise | GitHub issue reads and an approved local fix for book-app-buggy using existing skills |
 

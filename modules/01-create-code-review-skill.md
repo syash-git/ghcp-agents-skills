@@ -1,4 +1,4 @@
-# Module 1: Create a code-review checklist skill (20 minutes)
+# Module 1: Create a code-review checklist skill (8 minutes)
 
 > **Prerequisite:** Complete [setup](../README.md#setup-5-minutes). You should
 > have `samples\book-app-project\books.py` and no workshop agents or skills installed.
@@ -10,6 +10,17 @@ A reusable quality-review procedure that Copilot can load when a request matches
 its description. You will create `code-checklist` and try it with the default
 agent. No custom agent is needed yet: the checklist is a reusable procedure
 that can later be used by the code-review agent you build in Module 2.
+
+The skill combines two parts:
+
+- **A code-review checklist** that tells Copilot what to inspect across five
+  quality categories.
+- **A reporting contract backed by a report template** that requires consistent
+  sections and finding fields, including IDs, evidence, impact, and acceptance
+  conditions.
+
+You will write the skill first, then its supporting report template, and finally
+try them together in a code review.
 
 ## 2. Create the skill file
 

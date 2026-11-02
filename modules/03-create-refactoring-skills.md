@@ -1,4 +1,4 @@
-# Module 3: Create refactoring skills (25 minutes)
+# Module 3: Create refactoring skills (12 minutes)
 
 > **Prerequisite:** Complete [setup](../README.md#setup-5-minutes) and read
 > [the input report contract](../docs/report-contract.md).

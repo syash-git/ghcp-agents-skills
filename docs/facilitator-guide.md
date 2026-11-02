@@ -2,7 +2,7 @@
 
 ## Before delivery
 
-Allow 120 minutes including setup. Use Python 3.10+ and a functioning Copilot CLI
+Allow 65 minutes including setup (60 minutes for Modules 1-6). Use Python 3.10+ and a functioning Copilot CLI
 installation. The selected `samples/book-app-project` sample declares pytest.
 Do not require additional packages, a database server, or an MCP server.
 This workspace is the workshop deliverable; publishing it to GitHub is a separate
@@ -66,11 +66,11 @@ restart Copilot after moving them out so cached agents do not mask the exercise.
 | Segment | Minutes |
 |---|---|
 | Setup and concepts | 5 |
-| Create the review skill and template | 20 |
-| Create the code-review agent using the skill | 15 |
-| Create refactoring skills and templates; check discovery | 25 |
-| Create the test-generation skill; check discovery | 25 |
-| Create the dev-workflow agent; practice both approval gates | 20 |
+| Create the review skill and template | 8 |
+| Create the code-review agent using the skill | 8 |
+| Create refactoring skills and templates; check discovery | 12 |
+| Create the test-generation skill; check discovery | 12 |
+| Create the dev-workflow agent; practice both approval gates | 10 |
 | Enable GitHub MCP; inspect tools and optional repository exercises | 10 |
 
 ## Intentional review targets

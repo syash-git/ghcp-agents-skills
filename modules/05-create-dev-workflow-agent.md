@@ -1,4 +1,4 @@
-# Module 5: Create a dev-workflow agent (20 minutes)
+# Module 5: Create a dev-workflow agent (10 minutes)
 
 > **Prerequisite:** Create the skills from Modules 1, 3, and 4:
 > `code-checklist`, `review-handoff`, `safe-refactoring`, and `test-generation`.

@@ -1,4 +1,4 @@
-# Module 2: Create a code-review agent that uses your checklist (15 minutes)
+# Module 2: Create a code-review agent that uses your checklist (8 minutes)
 
 > **Prerequisite:** Complete [Module 1](01-create-code-review-skill.md).
 > Your `code-checklist` skill and report template must exist and work with the
