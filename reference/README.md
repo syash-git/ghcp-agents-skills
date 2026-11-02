@@ -26,7 +26,9 @@ both refactoring skills and their templates. Module 4 creates the
 test-generation skill. Neither module runs these skills.
 Module 5 runs them through one dev-workflow agent, with approval before
 refactoring and again before test generation.
-Module 7 reuses the review and refactoring skills to fix a human-selected
-GitHub issue affecting `book-app-buggy`, after approval and without publishing.
+Module 7 defines a standalone debugging procedure in the issue-resolver agent:
+diagnose a human-selected GitHub issue's root cause, propose a minimal fix,
+and implement it after approval without unrelated refactoring or publishing.
+It does not require the review/refactoring skills.
 Your wording may differ. Compare behavior, report
 contracts, and boundaries, not byte-for-byte equality.

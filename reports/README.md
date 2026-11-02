@@ -1,6 +1,7 @@
 # Workshop outputs
 
-The review and refactoring exercises use this folder. Refactoring accepts completed
+The review, refactoring, and issue-resolution exercises use this folder.
+Refactoring accepts completed
 findings reports from any producer; it does not require a review agent.
 
 | File | Producer | Consumer |
@@ -11,17 +12,19 @@ findings reports from any producer; it does not require a review agent.
 | `dev-review.md` | Dev-workflow agent + `code-checklist` (Module 5) | Human reviewing findings |
 | `dev-plan.md` | Dev-workflow agent + `review-handoff` | Human approving implementation scope |
 | `dev-results.md` | Dev-workflow agent + `safe-refactoring` | Human reviewing changes before test generation |
-| `issue-review.md` | Issue-resolver + `code-checklist` (Module 7) | Human reviewing issue evidence |
-| `issue-plan.md` | Issue-resolver + `review-handoff` | Human approving finding IDs and behavior changes |
-| `issue-results.md` | Issue-resolver + `safe-refactoring` | Human inspecting the local fix and verification limits |
+| `issue-diagnosis.md` | Issue-resolver (Module 7) | Human reviewing the root cause and approving the proposed fix and behavior changes |
+| `issue-results.md` | Issue-resolver | Human inspecting the minimal local fix and verification limits |
 
-There are deliberately no completed reports here yet. Supply findings grounded
-in current source and matching [the input contract](../docs/report-contract.md).
+There are deliberately no completed reports here yet. Supply refactoring input
+findings grounded in current source and matching
+[the input contract](../docs/report-contract.md).
 An agent or workflow's identity is not a required report field.
 
 Modules 3-4 create definitions only. The dev-workflow agent generates the
 review, plan, and results in Module 5. A plan is not implementation approval.
-Module 7 saves separate issue-specific reports, including the GitHub issue URL.
+Module 7 saves an issue diagnosis/proposed fix and a results report, both
+including the GitHub issue URL. These are not refactoring input reports and do
+not use the findings contract, finding IDs, or review/refactoring templates.
 It does not post reports to GitHub or close the issue.
 
 When no input path is supplied, the handoff skill selects the sole eligible

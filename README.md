@@ -9,8 +9,9 @@ running them yet. Refactoring accepts completed reports following
 [the report contract](docs/report-contract.md), regardless of their producer.
 Finally, combine the existing skills in a dev-workflow agent with human approval
 before refactoring and again before test generation.
-Module 7 adds an issue-resolver agent that uses GitHub MCP and the review and
-refactoring skills to make a human-approved local fix in `book-app-buggy`.
+Module 7 adds an issue-resolver agent that uses GitHub MCP, diagnoses the root
+cause, and makes a human-approved minimal local fix in `book-app-buggy` without
+the review/refactoring skills.
 
 **Nothing is pre-installed in `.github`.** You create every agent, skill, and
 supporting template during the labs. Completed examples live outside the active
@@ -34,7 +35,7 @@ By the end, you will have created:
 | `safe-refactoring` skill + results template | Make bounded edits and account for each finding |
 | `test-generation` skill | Extend the sample's pytest cases in the dev workflow without modifying production code |
 | `dev-workflow` agent | Review, pause for approval, refactor, pause for change approval, then generate tests |
-| `issue-resolver` agent | Read related GitHub issues, review one selected issue, and fix approved findings locally |
+| `issue-resolver` agent | Read related GitHub issues, diagnose one selected issue's root cause, and apply an approved minimal local fix |
 
 An **agent** defines a role and its boundaries. A **skill** defines a reusable
 procedure. You will create each separately, then connect them and observe how
@@ -90,7 +91,7 @@ agent to install all of the finished examples.
 | [4. Create a test-generation skill](modules/04-create-test-generation-skill.md) | 12 min | A test-generation skill, created but not run |
 | [5. Create a dev-workflow agent](modules/05-create-dev-workflow-agent.md) | 10 min | A single agent combining the skills with two human approval gates |
 | [6. Use the GitHub MCP server](modules/06-mcp-server.md) | 10 min | Built-in MCP tools, with optional repository-dependent issue and PR exercises |
-| [7. Create an issue-resolver agent](modules/07-create-issue-resolver-agent.md) | Additional exercise | GitHub issue reads and an approved local fix for book-app-buggy using existing skills |
+| [7. Create an issue-resolver agent](modules/07-create-issue-resolver-agent.md) | Additional exercise | GitHub issue reads, root-cause analysis, and an approved minimal local bug fix without refactoring |
 
 **Modules 1-2** demonstrate code review. **Modules 3-4** create the remaining
 skills and check discovery only. **Module 5** runs review, approved refactoring,
@@ -99,8 +100,9 @@ There is no pre-created-agent fast path: authoring the definitions is the goal,
 not just running them. Modules 2, 5, and 7 create custom agents.
 Module 6 uses the default agent separately; it does not change their boundaries
 or select a repository for you.
-Module 7 asks for the repository at runtime and fixes one selected issue after
-approval. It does not generate tests or publish changes.
+Module 7 asks for the repository at runtime, diagnoses one selected issue, and
+fixes its root cause after approval. It requires Module 6, not the earlier
+skills. It does not refactor unrelated code, generate or run tests, or publish changes.
 
 ## Starting layout
 

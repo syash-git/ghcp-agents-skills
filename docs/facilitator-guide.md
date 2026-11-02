@@ -49,11 +49,16 @@ default agent, without changing the existing custom agents' restrictions.
 
 Module 7 is an additional issue-resolver exercise using `book-app-buggy`.
 Learners provide a repository at runtime and select an applicable issue.
-The agent uses `code-checklist` and `review-handoff`, waits for explicit approval,
-then uses `safe-refactoring`. Require issue-specific acceptance conditions
+The agent directly traces the symptom to its root cause, proposes a minimal fix,
+waits for explicit approval, then corrects the faulty code without unrelated
+refactoring. It does not require Modules 1-5 or invoke their skills.
+Require issue-specific acceptance conditions
 instead of assuming the project sample's behavior contract applies. Ask about
 ambiguous year ranges or author matching. No tests, publishing, or issue writes
 are part of this exercise; no additional dependencies are needed.
+The diagnosis and proposed fix share one report, followed by a results report.
+Source inspection, syntax checks, and CLI help do not establish behavioral
+correctness; require disclosure of unverified acceptance criteria.
 
 If agents are not discovered, restart Copilot in the workshop root. For skills,
 use `/skills reload` and check the file and folder names. Personal and
@@ -78,7 +83,7 @@ restart Copilot after moving them out so cached agents do not mask the exercise.
 In Modules 1-5, review `samples/book-app-project`, not the buggy sample. Ground
 findings in current source and [the behavior contract](behavior-contract.md).
 Do not assume defects from the removed in-memory starter still exist.
-Module 7 instead reviews only the selected issue in `samples/book-app-buggy`.
+Module 7 instead diagnoses and fixes only the selected issue in `samples/book-app-buggy`.
 
 | Area | Review target | Expected direction after approval |
 |---|---|---|
