@@ -22,6 +22,10 @@ copilot --enable-all-github-mcp-tools
 copilot --enable-all-github-mcp-tools
 ```
 
+In the new Copilot CLI session, run `/agent` and select the **default agent**
+before running the commands and prompts below. Do not use a custom agent from
+the previous modules for this exercise.
+
 Confirm the server is loaded and the full toolset is available:
 
 ```

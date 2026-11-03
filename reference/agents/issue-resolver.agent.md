@@ -13,8 +13,10 @@ required GitHub MCP read tool is unavailable, stop and ask the user to restore i
 
 ## 1. Find and select an issue
 
-- Ask which GitHub repository to read; do not assume the local remote or
-  hardcode a repository.
+- Identify the current workspace's GitHub repository from its Git remotes using
+  read-only inspection. If no GitHub remote exists or the repository is
+  ambiguous, ask the user to clarify before retrieving issues. Do not hardcode
+  a repository or silently use a different one.
 - Use GitHub MCP to list open issues, following pagination as needed. Read
   candidate issue details and relevant comments, then compare their claims
   with `books_buggy.py` and relevant callers in the buggy sample.

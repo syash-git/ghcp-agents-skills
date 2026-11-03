@@ -111,10 +111,15 @@ After attempting the lab, compare with the inactive
 ## 3. Try it out
 
 Reload skills with `/skills reload`, then restart Copilot to discover the agent.
-Select it and start the workflow:
+Run `/agent` and select **dev-workflow**:
 
 ```text
-/agent dev-workflow
+/agent
+```
+
+After selecting the agent, send this prompt to start the workflow:
+
+```text
 Review samples/book-app-project/books.py, samples/book-app-project/book_app.py, and samples/book-app-project/utils.py against docs/behavior-contract.md. Follow the dev workflow and pause at each human approval gate. Preserve sample data and existing tests. Do not run tests.
 ```
 

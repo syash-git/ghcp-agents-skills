@@ -17,7 +17,7 @@ Read GitHub issues -> Human selects one
   -> Inspect the result and report verification limits
 ```
 
-You supply the repository when running the agent. The issue must apply to the
+The agent uses the current workspace's GitHub repository. The issue must apply to the
 local buggy sample; a similar title alone is not enough. This module does not
 generate tests, publish changes, or close issues.
 The debugging procedure lives directly in this agent; it does not use the
@@ -25,19 +25,9 @@ review/refactoring skills or their report templates.
 
 ## 2. Create the agent file
 
-Create the agent directory using either shell.
-
-**PowerShell**
-
-```powershell
-New-Item -ItemType Directory -Force -Path .\.github\agents
-```
-
-**Bash**
-
-```bash
-mkdir -p .github/agents
-```
+Reuse the `.github\agents` directory created in the previous modules; there is
+no need to create it again. If you skipped those modules and the directory does
+not exist, create it in your editor first.
 
 Save this as `.github\agents\issue-resolver.agent.md`:
 
@@ -57,8 +47,10 @@ required GitHub MCP read tool is unavailable, stop and ask the user to restore i
 
 ## 1. Find and select an issue
 
-- Ask which GitHub repository to read; do not assume the local remote or
-  hardcode a repository.
+- Identify the current workspace's GitHub repository from its Git remotes using
+  read-only inspection. If no GitHub remote exists or the repository is
+  ambiguous, ask the user to clarify before retrieving issues. Do not hardcode
+  a repository or silently use a different one.
 - Use GitHub MCP to list open issues, following pagination as needed. Read
   candidate issue details and relevant comments, then compare their claims
   with `books_buggy.py` and relevant callers in the buggy sample.
@@ -137,24 +129,26 @@ After authoring, compare with the inactive
 ## 3. Try it out
 
 Restart Copilot with GitHub MCP enabled as in Module 6. No workshop skills need
-to be installed or reloaded for this exercise. Select the agent:
+to be installed or reloaded for this exercise.
+
+Run `/agent` and select **issue-resolver**:
 
 ```text
-/agent issue-resolver
-Ask me which GitHub repository to use. Find open issues affecting
-samples/book-app-buggy and show the relevant candidates. Let me select one,
-then diagnose its root cause and propose a minimal fix. Wait for approval
-before changing source. Do not refactor unrelated code.
+/agent
 ```
 
-Provide the repository and choose an issue. Inspect `reports\issue-diagnosis.md`.
+After selecting the agent, send this prompt:
+
+```text
+Help me resolve an open issue in the current repository affecting samples/book-app-buggy.
+```
+
+Choose an issue from the current repository. Inspect `reports\issue-diagnosis.md`.
 Only if you agree, approve the proposed fix and its listed behavior changes,
 for example:
 
 ```text
-I approve the proposed fix and behavior changes for the selected issue in
-reports/issue-diagnosis.md. Fix only that issue in samples/book-app-buggy.
-Do not refactor unrelated code, create or run tests, or publish changes.
+I approve the proposed fix and behavior changes in reports/issue-diagnosis.md. Proceed with implementation.
 ```
 
 Inspect the diff and `reports\issue-results.md` afterward. The sample's
