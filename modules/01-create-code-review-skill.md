@@ -180,7 +180,20 @@ completed review and must not be presented as actual findings.
 
 ## 3. Try it out
 
-Start `copilot` from the workshop root if it is not already running.
+From a terminal at the workshop root, start Copilot CLI if it is not already running:
+
+**PowerShell**
+
+```powershell
+copilot
+```
+
+**Bash**
+
+```bash
+copilot
+```
+
 Start a fresh conversation with `/new`, then use `/agent` to choose the default
 agent. Reload the new skill:
 

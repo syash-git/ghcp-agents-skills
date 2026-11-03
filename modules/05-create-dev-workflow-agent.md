@@ -23,8 +23,18 @@ It does not delegate to the code-review agent or create new skills.
 
 ## 2. Create the agent file
 
+Create the project-local agent directory using either shell:
+
+**PowerShell**
+
 ```powershell
 New-Item -ItemType Directory -Force -Path .\.github\agents
+```
+
+**Bash**
+
+```bash
+mkdir -p .github/agents
 ```
 
 Save the following as `.github\agents\dev-workflow.agent.md`:

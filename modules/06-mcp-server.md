@@ -10,6 +10,14 @@ Agents changed *how* Copilot thinks; skills changed *what procedure* it follows.
 
 Exit any running Copilot session, then start a new one with all GitHub MCP tools turned on:
 
+**PowerShell**
+
+```powershell
+copilot --enable-all-github-mcp-tools
+```
+
+**Bash**
+
 ```bash
 copilot --enable-all-github-mcp-tools
 ```

@@ -18,8 +18,16 @@ them only in Module 5. Test failures do not authorize production fixes.
 
 Create the project-local skill directory:
 
+**PowerShell**
+
 ```powershell
 New-Item -ItemType Directory -Force -Path .\.github\skills\test-generation
+```
+
+**Bash**
+
+```bash
+mkdir -p .github/skills/test-generation
 ```
 
 Create `.github\skills\test-generation\SKILL.md` with the following complete content:
@@ -71,7 +79,7 @@ After your attempt, compare with the inactive
 
 ## 3. Check discovery
 
-Reload skills:
+In Copilot CLI, run `/skills reload` to reload the newly created skill:
 
 ```text
 /skills reload

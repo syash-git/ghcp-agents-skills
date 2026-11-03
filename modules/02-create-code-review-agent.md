@@ -14,10 +14,18 @@ review procedure and report format.
 
 ## 2. Create the agent file
 
-Create the project-local agent directory in PowerShell:
+Create the project-local agent directory using either shell:
+
+**PowerShell**
 
 ```powershell
 New-Item -ItemType Directory -Force -Path .\.github\agents
+```
+
+**Bash**
+
+```bash
+mkdir -p .github/agents
 ```
 
 Save the following as `.github\agents\code-reviewer.agent.md`.
@@ -78,7 +86,15 @@ exists, no later rewrite of the agent is needed.
 Start Copilot from the workshop root after saving the file. If it is already
 running, restart it so the new agent can be discovered:
 
+**PowerShell**
+
 ```powershell
+copilot
+```
+
+**Bash**
+
+```bash
 copilot
 ```
 

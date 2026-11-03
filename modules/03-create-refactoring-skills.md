@@ -279,14 +279,16 @@ Do not claim independent acceptance of your own changes.>
 
 ## 3. Check discovery
 
-Reload the skills:
+In Copilot CLI, run `/skills reload` to reload the newly created skills:
 
 ```text
 /skills reload
 ```
 
 Use `/skills` to confirm `review-handoff` and `safe-refactoring` are available.
-Do not invoke them, generate a plan, or change source in this module.
+We will not run these skills just yet. This step only checks discovery.
+You will use them in the coming modules, through the dev-workflow agent in
+Module 5. Do not invoke them, generate a plan, or change source in this module.
 
 ## 4. What to look for
 
