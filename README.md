@@ -49,7 +49,13 @@ using the sample's existing pytest dependency.
 ## Setup (5 minutes)
 
 Use an editor, PowerShell, an authenticated GitHub Copilot CLI installation,
-and Python 3.10+. Run commands from this workshop's root.
+and Python 3.10+. Clone the repository and enter its directory before running
+the workshop commands:
+
+```powershell
+git clone https://github.com/syash-git/ghcp-agents-skills.git
+Set-Location .\ghcp-agents-skills
+```
 
 ```powershell
 copilot --version
