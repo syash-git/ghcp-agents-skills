@@ -5,8 +5,9 @@
 Create three custom agents and four reusable skills from scratch. First create a
 checklist skill, then a reviewer that explicitly uses it. Create dedicated
 skills for report-based refactoring and contract-based test generation without
-running them yet. Refactoring accepts completed reports following
-[the report contract](docs/report-contract.md), regardless of their producer.
+running them yet. Refactoring validates completed reports against
+[the review template](reference/skills/code-checklist/templates/code-review.md)
+and current source evidence.
 Finally, combine the existing skills in a dev-workflow agent with human approval
 before refactoring and again before test generation.
 Module 7 adds an issue-resolver agent that uses GitHub MCP, diagnoses the root
@@ -20,8 +21,6 @@ after attempting each lab, not as a setup step.
 
 The review exercises follow the main agent-plus-checklist approach in
 [syash-git/agents-and-skills-workshop](https://github.com/syash-git/agents-and-skills-workshop).
-See [the comparison](docs/reference-review.md) for retained concepts and
-deliberate differences.
 
 ## Learning outcomes
 

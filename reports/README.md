@@ -1,8 +1,8 @@
 # Workshop outputs
 
 The review, refactoring, and issue-resolution exercises use this folder.
-Refactoring accepts completed
-findings reports from any producer; it does not require a review agent.
+Refactoring accepts completed reports using the review template's fields;
+it does not require a review agent.
 
 | File | Producer | Consumer |
 |---|---|---|
@@ -17,19 +17,20 @@ findings reports from any producer; it does not require a review agent.
 
 There are deliberately no completed reports here yet. Supply refactoring input
 findings grounded in current source and matching
-[the input contract](../docs/report-contract.md).
+[the review template](../reference/skills/code-checklist/templates/code-review.md).
 An agent or workflow's identity is not a required report field.
 
 Modules 3-4 create definitions only. The dev-workflow agent generates the
 review, plan, and results in Module 5. A plan is not implementation approval.
 Module 7 saves an issue diagnosis/proposed fix and a results report, both
 including the GitHub issue URL. These are not refactoring input reports and do
-not use the findings contract, finding IDs, or review/refactoring templates.
+not use finding IDs or review/refactoring templates.
 It does not post reports to GitHub or close the issue.
 
 When no input path is supplied, the handoff skill selects the sole eligible
 completed findings report or asks the user if none or several qualify. README
-files, templates, drafts, plans, previews, and results are not eligible input.
+files, templates, drafts, plans, previews, issue diagnoses, and results are not
+eligible input.
 
 Preserve selected input reports and original reviews. Reports contain
 source excerpts, so review them before sharing outside your project.
