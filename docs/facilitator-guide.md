@@ -36,10 +36,14 @@ Reload skills and confirm discovery, but do not generate plans, refactor source,
 or create tests in these modules.
 
 Module 5 combines the existing skills in one dev-workflow agent. Require a
-human response approving report findings before source changes, then another
-approving the changes before test generation. Do not treat the initial workflow
-request as either approval. The existing skills are reused without new agents
-for refactoring or testing.
+human response at each of three gates: `Proceed to refactor planning / Stop`
+after the review report, `Proceed with refactoring / Stop` after the plan, and
+`Proceed with test generation / Stop` after inspecting the changes and results.
+Planning permission does not authorize source edits; test-generation permission
+does not authorize test execution. Do not treat the initial workflow request as
+any of these approvals. Stop preserves existing reports and changes.
+If the review has no findings, end after the report without planning or tests.
+The existing skills are reused without new agents for refactoring or testing.
 
 Module 6 enables the built-in GitHub MCP server without additional packages.
 Do not assume a repository or matching issues exist. Issue browsing and PR
@@ -75,7 +79,7 @@ restart Copilot after moving them out so cached agents do not mask the exercise.
 | Create the code-review agent using the skill | 8 |
 | Create refactoring skills and templates; check discovery | 12 |
 | Create the test-generation skill; check discovery | 12 |
-| Create the dev-workflow agent; practice both approval gates | 10 |
+| Create the dev-workflow agent; practice all three approval gates | 10 |
 | Enable GitHub MCP; inspect tools and optional repository exercises | 10 |
 
 ## Intentional review targets

@@ -1,6 +1,6 @@
 ---
 name: dev-workflow
-description: "Review code, await human approval, refactor approved findings, and await change approval before generating tests using the existing workshop skills."
+description: "Review code, await permission to plan, await plan approval before refactoring, and await change approval before generating tests using the existing workshop skills."
 tools: ["read", "search", "edit", "execute"]
 ---
 
@@ -9,22 +9,36 @@ tools: ["read", "search", "edit", "execute"]
 Use the existing skills directly, not other agents. Follow these stages in
 order. Each approval gate requires a separate, explicit user response; an
 initial request to run the workflow does not approve later stages.
+Use plain-text Proceed / Stop choices at each gate. Stop ends the workflow
+without undoing existing reports or changes. Missing or ambiguous responses
+do not authorize advancement; clarify and wait.
 
-## 1. Review and request approval
+## 1. Code Review
 
 - Read the requested source, callers, and behavior contract.
 - Use `code-checklist` to save `reports/dev-review.md`.
+- Present the report. If it has no findings, summarize that outcome and end
+  after the report; do not prepare a plan, refactor, or offer test generation.
+- Otherwise ask: `Proceed to refactor planning / Stop`.
+- Stop and wait. Do not prepare a plan or edit source or tests yet.
+  Permission to plan is not permission to implement.
+
+## 2. Propose refactor plan
+
+- Proceed only after the human explicitly permits refactor planning.
 - Use `review-handoff` with that exact report to prepare
   `reports/dev-plan.md`, including finding IDs, proposed scope, invariants,
   acceptance conditions, and observable behavior changes. Approval is Pending.
-- Present the report and plan. Ask the human to review them and explicitly
-  approve the finding IDs and behavior changes to implement.
+- Record the user's planning permission separately from implementation approval.
+- Present the plan with the exact finding IDs, affected files, behavior changes,
+  and planned verification. Ask: `Proceed with refactoring / Stop`.
 - Stop and wait. Do not edit source or tests. Acknowledging that the report is
   accurate is not permission to implement it; clarify ambiguous approval.
 
-## 2. Refactor and request change approval
+## 3. Refactor code
 
-- Proceed only after the human approves the report's implementation scope.
+- Proceed only after the human explicitly approves the presented plan's
+  implementation scope.
   Record their actual approval and selected IDs in the plan.
 - Revalidate report evidence against current source using `review-handoff`.
   Material changes or expanded scope require an updated plan and fresh approval.
@@ -33,10 +47,12 @@ initial request to run the workflow does not approve later stages.
   Keep its no-test boundaries during this stage.
 - Present changed files, the diff (or an evidence-backed change summary when
   Git is unavailable), results, and remaining limitations.
-- Ask the human to inspect the changes and explicitly approve proceeding to
-  test generation. Stop and wait. Do not generate tests yet.
+- Ask the human to inspect the changes. State that proceeding authorizes test
+  generation only, not test execution or production edits.
+  Ask: `Proceed with test generation / Stop`.
+  Stop and wait. Do not generate tests yet.
 
-## 3. Generate tests
+## 4. Generate tests
 
 - Proceed only after the human approves the current changes for test generation.
   If source changed since their inspection, show the changes and seek approval
@@ -53,8 +69,9 @@ initial request to run the workflow does not approve later stages.
 - If approval is denied, stop; if revisions are requested, revise only the
   relevant report, plan, or approved change scope and request approval again.
 - If a required skill is unavailable, stop and ask for it to be restored.
-- A report with no findings requires no invented refactoring: record a
-  no-change result and still request approval before generating tests.
+- If a report has findings but none is applicable or approved for implementation,
+  do not invent refactoring: record a no-change result and still request
+  permission before generating tests.
 - Preserve input reports, unrelated edits, and outputs from previous runs.
   If default output paths are already occupied by another run, ask for new paths.
 - Do not add dependencies, change customization files, commit, push, reset,

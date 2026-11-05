@@ -24,8 +24,9 @@ The checklist skill is created first in Module 1. The reviewer in Module 2
 explicitly uses that existing skill from its first version. Module 3 creates
 both refactoring skills and their templates. Module 4 creates the
 test-generation skill. Neither module runs these skills.
-Module 5 runs them through one dev-workflow agent, with approval before
-refactoring and again before test generation.
+Module 5 runs them through one dev-workflow agent, with separate approval before
+refactor planning, implementation, and test generation. A review with no findings
+ends after the report.
 Module 7 defines a standalone debugging procedure in the issue-resolver agent:
 diagnose a human-selected GitHub issue's root cause, propose a minimal fix,
 and implement it after approval without unrelated refactoring or publishing.

@@ -9,7 +9,7 @@ running them yet. Refactoring validates completed reports against
 [the review template](reference/skills/code-checklist/templates/code-review.md)
 and current source evidence.
 Finally, combine the existing skills in a dev-workflow agent with human approval
-before refactoring and again before test generation.
+before refactor planning, before implementation, and before test generation.
 Module 7 adds an issue-resolver agent that uses GitHub MCP, diagnoses the root
 cause, and makes a human-approved minimal local fix in `book-app-buggy` without
 the review/refactoring skills.
@@ -33,7 +33,7 @@ By the end, you will have created:
 | `review-handoff` skill + plan template | Validate findings and separate planning from approval |
 | `safe-refactoring` skill + results template | Make bounded edits and account for each finding |
 | `test-generation` skill | Extend the sample's pytest cases in the dev workflow without modifying production code |
-| `dev-workflow` agent | Review, pause for approval, refactor, pause for change approval, then generate tests |
+| `dev-workflow` agent | Review, approve planning, approve the refactor plan, refactor, approve test generation, then generate tests |
 | `issue-resolver` agent | Read related GitHub issues, diagnose one selected issue's root cause, and apply an approved minimal local fix |
 
 An **agent** defines a role and its boundaries. A **skill** defines a reusable
@@ -94,13 +94,14 @@ agent to install all of the finished examples.
 | [2. Create a code-review agent](modules/02-create-code-review-agent.md) | 8 min | A reviewer that explicitly uses the existing checklist skill |
 | [3. Create refactoring skills](modules/03-create-refactoring-skills.md) | 12 min | Refactoring skills and templates, created but not run |
 | [4. Create a test-generation skill](modules/04-create-test-generation-skill.md) | 12 min | A test-generation skill, created but not run |
-| [5. Create a dev-workflow agent](modules/05-create-dev-workflow-agent.md) | 10 min | A single agent combining the skills with two human approval gates |
+| [5. Create a dev-workflow agent](modules/05-create-dev-workflow-agent.md) | 10 min | A single agent combining the skills with three human approval gates |
 | [6. Use the GitHub MCP server](modules/06-mcp-server.md) | 10 min | Built-in MCP tools, with optional repository-dependent issue and PR exercises |
 | [7. Create an issue-resolver agent](modules/07-create-issue-resolver-agent.md) | Additional exercise | GitHub issue reads, root-cause analysis, and an approved minimal local bug fix without refactoring |
 
 **Modules 1-2** demonstrate code review. **Modules 3-4** create the remaining
-skills and check discovery only. **Module 5** runs review, approved refactoring,
-and approved test generation together through the dev-workflow agent.
+skills and check discovery only. **Module 5** runs review, approved planning,
+approved refactoring, and approved test generation through the dev-workflow
+agent. A review with no findings ends after the report.
 There is no pre-created-agent fast path: authoring the definitions is the goal,
 not just running them. Modules 2, 5, and 7 create custom agents.
 Module 6 uses the default agent separately; it does not change their boundaries
@@ -163,7 +164,7 @@ are not input findings reports.
 
 Use the reviewer for Module 2. In Modules 3-4, author skills without changing
 source or generating tests. Module 5 uses the dev-workflow agent and preserves
-both human approval gates.
+all three human approval gates.
 
 ## Resources
 
