@@ -142,7 +142,7 @@ Run `/agent` and select **dev-workflow**:
 After selecting the agent, send this prompt to start the workflow:
 
 ```text
-Review samples/book-app-project/books.py, samples/book-app-project/book_app.py, and samples/book-app-project/utils.py against docs/behavior-contract.md. Follow the dev workflow and pause at each human approval gate. Preserve sample data and existing tests. Do not run tests.
+Run the dev workflow on `samples/book-app-project/`.
 ```
 
 Inspect `reports\dev-review.md`. If it has findings and you want a refactor plan,
