@@ -85,7 +85,8 @@ restart Copilot after moving them out so cached agents do not mask the exercise.
 ## Intentional review targets
 
 In Modules 1-5, review `samples/book-app-project`, not the buggy sample. Ground
-findings in current source and [the behavior contract](behavior-contract.md).
+findings in current source and the
+[behavior contract](../samples/book-app-project/behavior-contract.md).
 Do not assume defects from the removed in-memory starter still exist.
 Module 7 instead diagnoses and fixes only the selected issue in `samples/book-app-buggy`.
 

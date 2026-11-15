@@ -204,7 +204,7 @@ agent. Reload the new skill:
 Ask for a task matching the skill's description:
 
 ```text
-Perform a code quality check of samples/book-app-project/books.py against docs/behavior-contract.md. Reply in chat only; do not change files or create tests.
+Perform a code quality check of samples/book-app-project/books.py against samples/book-app-project/behavior-contract.md. Reply in chat only; do not change files or create tests.
 ```
 
 ## 4. What to look for

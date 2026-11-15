@@ -7,7 +7,7 @@ description: "Use when generating test cases, writing unit tests, or adding regr
 
 ## Procedure
 
-1. Read `docs/behavior-contract.md`, the requested source, and existing tests.
+1. Read `samples/book-app-project/behavior-contract.md`, the requested source, and existing tests.
    Derive expected behavior from the contract and explicitly approved changes,
    not from the implementation. Flag unclear requirements rather than inventing them.
 2. Extend `samples/book-app-project/tests/test_books.py` using existing pytest

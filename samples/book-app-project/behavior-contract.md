@@ -1,6 +1,6 @@
-# Book collection behavior contract
+# Book app behavior contract
 
-Workshop sample: [book-app-project](../samples/book-app-project/README.md).
+Workshop sample: [book-app-project](README.md).
 This contract preserves its existing behavior unless a correction is explicitly
 approved. It is not permission to refactor or invent new validation requirements.
 

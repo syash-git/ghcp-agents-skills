@@ -29,7 +29,8 @@ required GitHub MCP read tool is unavailable, stop and ask the user to restore i
 
 - Establish intended behavior from the selected issue, applicable sample
   documentation, and explicit user decisions. Do not apply
-  `docs/behavior-contract.md` wholesale: it targets `book-app-project`.
+  `samples/book-app-project/behavior-contract.md` wholesale: it targets
+  `book-app-project`.
 - Ask about conflicting or incomplete requirements, such as a valid year
   range or exact versus partial author matching. Do not invent a correction.
 - Read the affected functions and callers. Trace the reported symptom through

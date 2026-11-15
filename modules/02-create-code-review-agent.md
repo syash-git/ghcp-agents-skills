@@ -102,7 +102,7 @@ For comparison with Module 1, first choose the default agent through `/agent`.
 Ask the same quality-check request:
 
 ```text
-Perform a code quality check of samples/book-app-project/books.py against docs/behavior-contract.md. Reply in chat only; do not change files or create tests.
+Perform a code quality check of samples/book-app-project/books.py against samples/book-app-project/behavior-contract.md. Reply in chat only; do not change files or create tests.
 ```
 
 The default agent may already invoke your skill and use its report format.
@@ -118,7 +118,7 @@ In the same session, use `/agent` to select `code-reviewer`, or select it direct
 Repeat the exact prompt:
 
 ```text
-Perform a code quality check of samples/book-app-project/books.py against docs/behavior-contract.md. Reply in chat only; do not change files or create tests.
+Perform a code quality check of samples/book-app-project/books.py against samples/book-app-project/behavior-contract.md. Reply in chat only; do not change files or create tests.
 ```
 
 The prompt deliberately does not name `code-checklist`: your agent's instructions
