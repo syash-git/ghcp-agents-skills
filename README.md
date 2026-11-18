@@ -35,6 +35,8 @@ copilot --version
 
 ## Workshop Guide
 
+Open [book-app-project](samples/book-app-project) and explore the code before starting the modules.
+
 ### The book app
 
 The workshop uses a simple Python CLI application for managing a book collection. Both versions
@@ -62,14 +64,14 @@ using GitHub MCP.
 
 #### Part 1: Review and refactor code
 
-| Module | You’ll do |
+| Module | Description |
 |---|---|
 | [1.1. Create a code-review checklist skill](<modules/1.1 Create a Code Review Skill.md>) | Create a reusable quality checklist and code review template |
 | [1.2. Create a review-refactor agent](<modules/1.2 Create a Review Refactor Agent.md>) | Create an agent that uses the skill and makes approved, statically inspected edits |
 
 #### Part 2: Debug issues using an MCP server
 
-| Module | You’ll do |
+| Module | Description |
 |---|---|
 | [2.1. Use the GitHub MCP server](<modules/2.1 Use the GitHub MCP Server.md>) | Read GitHub issues and make a local fix using the default agent |
 | [2.2. Create an issue-resolver agent](<modules/2.2 Create an Issue Resolver Agent.md>) | Diagnose and fix an approved issue in the buggy sample |
