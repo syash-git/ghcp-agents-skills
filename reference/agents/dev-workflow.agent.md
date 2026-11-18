@@ -57,9 +57,10 @@ do not authorize advancement; clarify and wait.
 - Proceed only after the human approves the current changes for test generation.
   If source changed since their inspection, show the changes and seek approval
   again before proceeding.
-- Use `test-generation` to extend `samples/book-app-project/tests/test_books.py` against
-  `samples/book-app-project/behavior-contract.md`. Preserve existing tests and do not edit production
-  code in this stage.
+- Use `test-generation` to create `samples/book-app-project/tests/test_books.py`
+  against `samples/book-app-project/behavior-contract.md`, or extend it if the
+  learner has already created tests. Preserve learner changes and do not edit
+  production code in this stage.
 - Generate tests only. Run them only if separately requested, as specified by
   the skill. Summarize coverage, paths, and actual execution or not-run status.
 - Stop. Failing tests do not authorize another production refactor.

@@ -304,4 +304,4 @@ The skills are ready for the human-approved workflow in Module 5.
 
 ---
 
-**Next module:** [04 - Create a test-generation skill](04-create-test-generation-skill.md).
+**Next module:** [04 - Create a test-generation skill](../modules/X-create-test-generation-skill.md).

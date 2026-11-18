@@ -2,60 +2,59 @@
 
 ## Before delivery
 
-Allow 65 minutes including setup (60 minutes for Modules 1-6). Use Python 3.10+ and a functioning Copilot CLI
-installation. The selected `samples/book-app-project` sample declares pytest.
-Do not require additional packages, a database server, or an MCP server.
+Use Python 3.10+ and a functioning Copilot CLI installation. The
+`samples/book-app-project` sample has no bundled tests or
+third-party runtime dependencies. No testing framework or test-generation
+skill is required for the current modules.
+Do not require other packages, a database server, or a separately hosted MCP server.
 This workspace is the workshop deliverable; publishing it to GitHub is a separate
 action and is not needed to run it.
 
-Modules 1-2 build and demonstrate the review skill and agent;
-Module 3 builds refactoring skills; Module 4 builds the test-generation skill.
-Modules 3-4 create skills without running them. Module 5 runs the combined
-workflow. Keep the sample source, JSON data, and existing tests unchanged before
-it; do not generate additional tests yet.
+Part 1 builds and demonstrates the review skill and review-refactor agent.
+Part 2 uses GitHub MCP to debug issues, first with the default agent and then
+with the issue-resolver agent. Keep sample source unchanged until an exercise
+authorizes edits, and preserve JSON data and any learner-created tests.
+No starter tests are supplied.
 
 Keep a separate pristine copy before learner refactoring if you need another
 session. Do not use destructive Git resets or overwrite learner edits to restore
 the exercise.
 
 The starting workshop has no active definitions in `.github`. Participants
-create three agents, four skills, and their supporting templates in the
-labs. Keep [completed examples](../reference/README.md) outside active
+create one skill, its report template, and two agents in the core modules.
+Keep [completed examples](../reference/README.md) outside active
 configuration; do not bulk-copy them before a session.
 
 Keep completed examples as an answer key rather than an installation step.
-In Modules 3-4, check discovery only; save execution for Module 5.
 
-In Module 1, learners create the checklist skill and try it with the default
-agent. In Module 2, they create the reviewer with an explicit instruction to use
-that existing skill; no intermediate agent or later rewrite is required.
-Module 3 creates both refactoring skills and their templates.
-Module 4 creates the test-generation skill using the sample's existing pytest
-framework and temporary-file fixtures.
-Reload skills and confirm discovery, but do not generate plans, refactor source,
-or create tests in these modules.
+## Part 1: Review and refactor code
 
-Module 5 combines the existing skills in one dev-workflow agent. Require a
-human response at each of three gates: `Proceed to refactor planning / Stop`
-after the review report, `Proceed with refactoring / Stop` after the plan, and
-`Proceed with test generation / Stop` after inspecting the changes and results.
-Planning permission does not authorize source edits; test-generation permission
-does not authorize test execution. Do not treat the initial workflow request as
-any of these approvals. Stop preserves existing reports and changes.
-If the review has no findings, end after the report without planning or tests.
-The existing skills are reused without new agents for refactoring or testing.
+In [Module 1.1](<../modules/1.1 Create a Code Review Skill.md>), learners create the
+checklist skill and try it with the default agent.
+[Module 1.2](<../modules/1.2 Create a Review Refactor Agent.md>) creates the
+review-refactor agent, which explicitly uses that skill rather than duplicating
+its procedure.
 
-Module 6 enables the built-in GitHub MCP server without additional packages.
-Do not assume a repository or matching issues exist. Issue browsing and PR
-publishing are optional and require the learner's chosen repository and access;
-publishing also needs a matching Git checkout and explicit approval. Use the
-default agent, without changing the existing custom agents' restrictions.
+Review and Refactor are capabilities, not a fixed sequence. Let learners discuss
+findings and alternatives without rerunning reviews or treating questions as
+approval. Reviews produce a report; requested refactoring produces a saved plan.
+Source changes require explicit plan approval, and changed scope needs renewed
+approval. The agent inspects edits statically and does not execute code or tests.
+No actionable findings means no forced edits.
 
-Module 7 is an additional issue-resolver exercise using `book-app-buggy`.
+## Part 2: Debug issues using an MCP server
+
+[Module 2.1](<../modules/2.1 Use the GitHub MCP Server.md>) enables the built-in GitHub MCP server.
+Use the default agent to read issues and make a local fix. Do not assume a
+repository or matching issues exist. Keep the exercise local: no new branches,
+commits, pushes, PRs, or issue closure.
+
+[Module 2.2](<../modules/2.2 Create an Issue Resolver Agent.md>) creates the
+issue-resolver agent using `book-app-buggy`.
 Learners provide a repository at runtime and select an applicable issue.
 The agent directly traces the symptom to its root cause, proposes a minimal fix,
 waits for explicit approval, then corrects the faulty code without unrelated
-refactoring. It does not require Modules 1-5 or invoke their skills.
+refactoring. It does not require Part 1 or invoke its skill.
 Require issue-specific acceptance conditions
 instead of assuming the project sample's behavior contract applies. Ask about
 ambiguous year ranges or author matching. No tests, publishing, or issue writes
@@ -64,31 +63,28 @@ The diagnosis and proposed fix share one report, followed by a results report.
 Source inspection, syntax checks, and CLI help do not establish behavioral
 correctness; require disclosure of unverified acceptance criteria.
 
+## Discovery
+
 If agents are not discovered, restart Copilot in the workshop root. For skills,
 use `/skills reload` and check the file and folder names. Personal and
 organization configuration may affect comparisons; do not delete it to prepare
 the workshop. If this folder was previously used with active definitions,
 restart Copilot after moving them out so cached agents do not mask the exercise.
 
-## Suggested timing
+## Workshop route
 
-| Segment | Minutes |
-|---|---|
-| Setup and concepts | 5 |
-| Create the review skill and template | 8 |
-| Create the code-review agent using the skill | 8 |
-| Create refactoring skills and templates; check discovery | 12 |
-| Create the test-generation skill; check discovery | 12 |
-| Create the dev-workflow agent; practice all three approval gates | 10 |
-| Enable GitHub MCP; inspect tools and optional repository exercises | 10 |
+| Part | Modules | Sample |
+|---|---|---|
+| 1: Review and refactor code | 1.1 Review skill; 1.2 Review-refactor agent | `book-app-project` |
+| 2: Debug issues using an MCP server | 2.1 GitHub MCP; 2.2 Issue-resolver agent | `book-app-buggy` |
 
 ## Intentional review targets
 
-In Modules 1-5, review `samples/book-app-project`, not the buggy sample. Ground
+In Part 1, review `samples/book-app-project`, not the buggy sample. Ground
 findings in current source and the
 [behavior contract](../samples/book-app-project/behavior-contract.md).
 Do not assume defects from the removed in-memory starter still exist.
-Module 7 instead diagnoses and fixes only the selected issue in `samples/book-app-buggy`.
+Module 2.2 instead diagnoses and fixes only the selected issue in `samples/book-app-buggy`.
 
 | Area | Review target | Expected direction after approval |
 |---|---|---|
@@ -110,19 +106,19 @@ From `samples/book-app-project`, run `python -B book_app.py help` or
 Do not run interactive add/remove commands against the copied `data.json`
 during setup or verification.
 
-The syntax command and demonstration do not verify the full contract.
-Module 5 extends existing pytest cases after change approval. Tests must use
-temporary JSON files and cover only the contract and explicitly approved changes.
+These are facilitator demonstrations, not commands for the review-refactor agent.
+They do not verify the full contract. Test generation and execution are outside
+the current workshop route.
 
 ## Common interventions
 
 | Problem | Response |
 |---|---|
 | Workshop definitions appear before learners create them | Identify cached/personal definitions and restart; do not pre-install answer keys |
-| Refactoring skills are missing | Finish Module 3 and reload skills |
+| Review skill is missing | Finish Module 1.1 and reload skills |
 | Review tries to fix source | Stop the edit; reinforce report-only review boundaries |
 | Checklist never loads | Inspect invocation, description, enabled state, and skill reload |
-| No eligible input report | The handoff skill asks the user to supply one; it does not generate findings |
+| No current review report | Ask the user to provide one or request a review before planning |
 | Several input reports qualify | Ask the user to select one; do not choose the newest or merge silently |
 | Evidence changed after review | Refresh stale findings before implementation |
 | Refactorer starts after plan-only request | Stop; require explicit ID/scope and behavior approval |
@@ -131,20 +127,6 @@ temporary JSON files and cover only the contract and explicitly approved changes
 | Catch-all remains | Ask which specific recovery path justifies it |
 | "Everything passed" without evidence | Require actual observations and unverified conditions |
 
-The reviewer has no shell execution or agent delegation. Refactoring and test
-generation run through the dev-workflow agent in Module 5. Report-only and
-source-scope limits are instructions, not security sandboxes.
-
-## Test-generation interventions
-
-| Problem | Response |
-|---|---|
-| Generated tests encode starter defects as expected behavior | Re-read the behavior contract; keep failing contract assertions |
-| Tests touch sample data | Patch `books.DATA_FILE` to a `tmp_path` before constructing collections or importing the CLI |
-| Search tests depend on add logic | Seed independent `Book` fixtures |
-| Zero tests discovered | Check the output path and discovery command; do not call the run a pass |
-| Test generator starts fixing production code | Stop the edit; require a separate approved correction task |
-| Failing suite is hidden by skips or expected failures | Keep defects visible and distinguish test mistakes from source mismatches |
-
-Discuss what generated coverage does and does not establish. A passing run
-does not prove completeness; require mapping back to every contract requirement.
+The review-refactor agent has no shell execution or agent delegation and does
+not generate tests. Report-only and source-scope limits are instructions, not
+security sandboxes.

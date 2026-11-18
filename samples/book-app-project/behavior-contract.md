@@ -10,8 +10,8 @@ approved. It is not permission to refactor or invent new validation requirements
 - `Book` has `title`, `author`, `year`, and `read` fields; `read` defaults to `False`.
 - Keep JSON persistence through the module-level `DATA_FILE`. Its default
   `data.json` path is relative to the working directory.
-- Preserve existing pytest tests and sample data. Do not add a new framework,
-  database, or public API as part of a structural refactor.
+- Preserve sample data and any learner-created tests. Do not add a new
+  framework, database, or public API as part of a structural refactor.
 
 ## Collection operations
 
@@ -47,7 +47,7 @@ The sample has weak input validation. Report concrete consequences, but do not
 invent a year range, reject blank values, trim model inputs, change search to
 substring matching, or enforce title uniqueness without approval. If selected
 findings need such a decision, record the exact accepted behavior in the plan
-and update this contract before generating tests for that correction.
+and update this contract before implementing that correction.
 
 ## Structural refactoring versus bug fixes
 

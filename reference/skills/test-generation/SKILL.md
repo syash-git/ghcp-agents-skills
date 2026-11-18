@@ -7,24 +7,26 @@ description: "Use when generating test cases, writing unit tests, or adding regr
 
 ## Procedure
 
-1. Read `samples/book-app-project/behavior-contract.md`, the requested source, and existing tests.
+1. Read `samples/book-app-project/behavior-contract.md`, the requested source, and any existing tests.
    Derive expected behavior from the contract and explicitly approved changes,
    not from the implementation. Flag unclear requirements rather than inventing them.
-2. Extend `samples/book-app-project/tests/test_books.py` using existing pytest
-   conventions. Preserve existing tests and learner changes.
+2. Create the `tests` folder and `samples/book-app-project/tests/test_books.py`
+   using pytest. If tests already exist, extend them without overwriting learner changes.
 3. Map each contract requirement in the requested scope to a named test or
    parameterized case, covering normal, edge, and failure cases as applicable.
    Use precise assertions for returned values, state changes, and exceptions.
    Keep tests independent so one broken operation does not mask another.
-4. Reuse `tmp_path` and `monkeypatch` to redirect `books.DATA_FILE` before
-   constructing collections or importing the CLI. Patch the CLI collection
-   and input/output when needed. Never modify the sample's `data.json`.
+4. Create or reuse an autouse fixture with `tmp_path` and `monkeypatch` to
+   redirect `books.DATA_FILE` before constructing collections or importing the
+   CLI. Seed temporary data per test. Patch the CLI collection and input/output
+   when needed. Never modify the sample's `data.json`.
 5. Change tests only. Do not install packages or fix production code.
    Distinguish test/setup errors from production mismatches; do not weaken
    assertions or add skips/expected failures to hide contract violations.
 6. Run tests only when explicitly requested. From `samples/book-app-project`,
    use `python -m pytest tests/test_books.py -v`.
    Otherwise provide the command and state that tests were not run.
+   If pytest is unavailable, report the missing prerequisite; do not install it.
 
 ## Completion
 

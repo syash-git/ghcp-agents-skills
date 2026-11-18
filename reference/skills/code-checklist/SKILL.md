@@ -5,8 +5,9 @@ description: Team code quality checklist. Use for a code review, quality check, 
 
 # Code Quality Checklist
 
-Inspect the requested source and callers before making claims. Apply all five
-categories in order. For categories without findings, write "No issues found."
+Inspect the requested source, callers, behavior contract, and any existing tests
+before making claims. Apply all five categories in order. For categories without
+findings, write "No issues found."
 Do not confuse a missing feature with a defect: use the supplied behavior
 contract to establish expected behavior.
 

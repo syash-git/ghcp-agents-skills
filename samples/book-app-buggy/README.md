@@ -1,6 +1,7 @@
 # Book App - Buggy Version
 
-This directory contains an intentionally buggy version of the book collection app for debugging exercises in Chapter 03.
+This directory contains an intentionally buggy version of the book collection app
+for [Part 2 of the workshop](../../README.md#part-2-debug-issues-using-an-mcp-server).
 
 **Do NOT fix these bugs directly.** They exist so learners can practice using GitHub Copilot CLI to identify and debug issues.
 

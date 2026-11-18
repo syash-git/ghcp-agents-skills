@@ -11,7 +11,6 @@ It can add, remove, and list books. Also mark them as read.
 
 * Reads books from a JSON file (our database)
 * Input checking is weak in some areas
-* Some tests exist but probably not enough
 
 ---
 
@@ -21,7 +20,6 @@ It can add, remove, and list books. Also mark them as read.
 * `books.py` - BookCollection class with data logic
 * `utils.py` - Helper functions for UI and input
 * `data.json` - Sample book data
-* `tests/test_books.py` - Starter pytest tests
 
 ---
 
@@ -35,11 +33,10 @@ python book_app.py remove
 python book_app.py help
 ```
 
-## Running Tests
+## Testing
 
-```bash
-python -m pytest tests/
-```
+No tests are bundled. Test generation and a testing framework are not required
+for the current workshop modules.
 
 ---
 

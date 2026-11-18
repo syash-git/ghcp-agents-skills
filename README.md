@@ -1,6 +1,6 @@
 # Agents & Skills Workshop
 
-Welcome! Over the next **60 minutes**, you’ll use a small Python book app to
+Welcome! In this workshop, you’ll use a small Python book app to
 learn how to create reusable Copilot agents and skills.
 ## The story
 
@@ -18,8 +18,9 @@ Copilot a role and clear boundaries.
 - **Git** and a code editor
 - **GitHub Copilot CLI**, installed and signed in with an account that can
   access the repository you’ll use for the GitHub exercises
-- **pytest** for running the sample tests (optional until you want to run them):
-  `python -m pip install pytest`
+
+The sample has no bundled tests or third-party runtime dependencies.
+No testing framework is required for the current modules.
 
 ## Setup
 
@@ -39,8 +40,7 @@ copilot --version
 The workshop uses a simple Python CLI application for managing a book collection. Both versions
 are in `samples/`:
 
-- `book-app-project/` is the main version for the review, refactoring, and
-  testing modules.
+- `book-app-project/` is the main version for the review and refactoring modules.
 
   You can run this app:
 
@@ -50,29 +50,29 @@ python3 -B book_app.py list
 python book_app.py help
 ```
 
-- `book-app-buggy/` is intentionally broken and used in the optional issue
-  resolution module.
+- `book-app-buggy/` is intentionally broken and used in Part 2's debugging
+  exercises.
 
 
 
 ### Workshop modules
 
-Developers regularly review and refactor code, write tests, and debug issues.
-In this workshop, you’ll create skills for review, refactoring, and testing,
-then build an agent to orchestrate that workflow. You’ll also explore issue
-debugging with GitHub tools.
+The workshop has two parts: review and refactor local code, then debug issues
+using GitHub MCP.
 
-| Module | Time | You’ll make |
-|---|---:|---|
-| [1. Create a code-review checklist skill](modules/01-create-code-review-skill.md) | 8 min | A reusable quality checklist and code review template |
-| [2. Create a code-review agent](modules/02-create-code-review-agent.md) | 8 min | Your first reviewer agent, explicitly connected to the checklist |
-| [3. Create refactoring skills](modules/03-create-refactoring-skills.md) | 12 min | Skills and templates for planning and carrying out approved refactors |
-| [4. Create a test-generation skill](modules/04-create-test-generation-skill.md) | 12 min | A procedure for adding contract-based tests |
-| [5. Create a dev-workflow agent](modules/05-create-dev-workflow-agent.md) | 10 min | One agent that coordinates the skills with approval gates |
-| [6. Use the GitHub MCP server](modules/06-mcp-server.md) | 10 min | Use GitHub tools from Copilot CLI |
-| [7. Create an issue-resolver agent](modules/07-create-issue-resolver-agent.md) | Extra | Diagnose and fix an approved issue in a separate sample |
+#### Part 1: Review and refactor code
 
-Modules 1–6 take about 60 minutes. Module 7 is optional.
+| Module | You’ll do |
+|---|---|
+| [1.1. Create a code-review checklist skill](<modules/1.1 Create a Code Review Skill.md>) | Create a reusable quality checklist and code review template |
+| [1.2. Create a review-refactor agent](<modules/1.2 Create a Review Refactor Agent.md>) | Create an agent that uses the skill and makes approved, statically inspected edits |
+
+#### Part 2: Debug issues using an MCP server
+
+| Module | You’ll do |
+|---|---|
+| [2.1. Use the GitHub MCP server](<modules/2.1 Use the GitHub MCP Server.md>) | Read GitHub issues and make a local fix using the default agent |
+| [2.2. Create an issue-resolver agent](<modules/2.2 Create an Issue Resolver Agent.md>) | Diagnose and fix an approved issue in the buggy sample |
 
 ## Helpful links
 
